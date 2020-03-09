@@ -15,10 +15,27 @@
         <nav> Nav will go here</nav>
         <h1>This is a header</h1>
     </header>
+    
     <div class="container">
+    <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
         {% block content %}
         {% endblock %}
     </div>
-    <script href="{{url_for('static', filename='app.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
 </body>
 </html>

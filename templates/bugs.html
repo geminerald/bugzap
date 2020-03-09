@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content%}
 <h1> Hello Bugs Page</h1>
+
     {% for bug in bugs %}
         {{bug.Owner}}
         {{bug.Creator}}

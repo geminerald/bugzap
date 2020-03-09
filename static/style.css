@@ -1,0 +1,10 @@
+body{
+    height: 100vh;
+    background-color: #000000;
+}
+
+h1{
+    font-family: sans-serif;
+    background-color: #bada55;
+    color: #fafafa;
+}

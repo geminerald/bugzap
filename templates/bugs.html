@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content%}
 <h1> Hello Bugs Page</h1>
-
+<ul class="collapsible">
     {% for bug in bugs %}
-        {{bug.Owner}}
-        {{bug.Creator}}
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{bug.Owner}}</div>
+            <div class="collapsible-body"><span>{{bug.Creator}}</span></div>
+        </li>
     {% endfor %}
+  </ul>
+    
+        
+        
 {% endblock %}

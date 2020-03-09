@@ -7,9 +7,16 @@
     <title>Bug Zap</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    
+
 </head>
 <body>
+    <header>
     
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script href="{{url_for('static', filename='app.js')}}"></script>
 </body>
 </html>

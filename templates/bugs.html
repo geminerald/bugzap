@@ -4,12 +4,11 @@
 <ul class="collapsible">
     {% for bug in bugs %}
         <li>
-            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{bug.Owner}}  {{bug.Category}}</div>
-            <div class="collapsible-body"><span>{{bug.Creator}}</span></div>
+            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{bug.Summary}}   {{bug.Priority}} </div>
+            <div class="collapsible-body"><span>{{bug.Creator}}</span>
+                <div class="collapsible-footer"><span>{{bug.Category}}</span></div>
+            </div>
         </li>
     {% endfor %}
   </ul>
-    
-        
-        
 {% endblock %}

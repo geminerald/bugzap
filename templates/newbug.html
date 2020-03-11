@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<h3>Report a new Bug</h3>
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="bug_summary" type="text" class="validate">
+          <label for="bug_summary">Bug Summary</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="bug_category" type="text" class="validate">
+          <label for="bug_category">Category</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input value="I am not editable" id = "bug_description" type="text" class="validate">
+          <label for="bug_description">Bug Description</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

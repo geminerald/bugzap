@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    console.log("page loaded, starting js");
     $('.collapsible').collapsible();
-    $('select').formSelect();
+    $('select').material_select();
+    console.log("page loaded, js complete");
   });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,26 @@
     <link rel="icon" href="{{url_for('static', filename='images/bug-zap-icon.jpg')}}">
 
 </head>
+
 <body>
     <header>
         <nav> Nav will go here</nav>
     </header>
-    
+
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="{{url_for('static', filename='js/app.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("page loaded, starting js");
+            $('.collapsible').collapsible();
+            $('select').material_select();
+            console.log("page loaded, js complete");
+        });
+    </script>
 </body>
+
 </html>

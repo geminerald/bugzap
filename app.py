@@ -17,7 +17,7 @@ def get_bugs():
 
 @app.route('/new_bug')
 def new_bug():
-    return render_template('new_bug.html')
+    return render_template('new_bug.html', users=mongo.db.users.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

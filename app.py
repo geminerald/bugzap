@@ -24,7 +24,7 @@ def new_bug():
 
 @app.route('/insert_bug', methods=['POST'])
 def insert_bug():
-    bugs = mongo.db.bugs
+    bugs = mongo.db.bug
     bugs.insert_one(request.form.to_dict())
     return redirect(url_for('get_bugs'))
 

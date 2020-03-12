@@ -4,8 +4,8 @@
 <ul class="collapsible">
     {% for bug in bugs %}
         <li>
-            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{bug.bug_summary}}   {{bug.bug_priority}} </div>
-            <div class="collapsible-body"><span>{{bug.bug_creator}}</span>
+            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{bug.bug_summary}}  Submitted by {{bug.bug_user}} </div>
+            <div class="collapsible-body"><span>{{bug.bug_description}}</span>
                 <div class="collapsible-footer"><span>{{bug.bug_category}}</span></div>
             </div>
         </li>

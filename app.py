@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, request
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -10,14 +10,24 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser1@zwcluster1-znjzd.mongodb
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/get_bugs')
 def get_bugs():
     return render_template("bugs.html", bugs=mongo.db.bug.find())
 
+
 @app.route('/new_bug')
 def new_bug():
     return render_template('new_bug.html', users=mongo.db.users.find())
+
+
+@app.route('/insert_bug', methods=['POST'])
+def insert_bug():
+    bugs = mongo.db.bugs
+    bugs.insert_one(request.form.to_dict())
+    return redirect(url_for('get_bugs'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

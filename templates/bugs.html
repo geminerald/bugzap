@@ -4,7 +4,16 @@
 <ul class="collapsible">
     {% for bug in bugs %}
         <li>
-            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{bug.bug_summary}}  Submitted by {{bug.bug_user}} </div>
+            <div class="collapsible-header bug-header">
+                <div class="col s3">
+                    <i class="material-icons">arrow_drop_down</i>
+                    <a class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit</a>
+                    <a class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Close</a>
+                </div>
+                <div class="col s9 bug-summary-info">
+                    <strong>{{bug.bug_summary}}</strong>  Submitted by {{bug.bug_user}}
+                </div>
+            </div>
             <div class="collapsible-body"><span>{{bug.bug_description}}</span>
                 <div class="collapsible-footer"><span>{{bug.bug_category}}</span></div>
             </div>

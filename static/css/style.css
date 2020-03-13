@@ -2,3 +2,20 @@ body{
     background-color: #fafafa;
     color: slategrey;
 }
+
+.btn-small{
+    height: 20px;
+    width: 60px;
+    line-height:20px;
+    margin:5px 5px;
+    padding: 0 0.5em;
+}
+
+.bug-header{
+    margin-top: 5px;
+
+}
+
+.bug-summary-info{
+    text-align: right;
+}

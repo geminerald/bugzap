@@ -7,7 +7,7 @@
             <div class="collapsible-header bug-header">
                 <div class="col s3">
                     <i class="material-icons">arrow_drop_down</i>
-                    <a class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit</a>
+                    <a href="{{url_for('edit_bug', bug_id = bug._id)}}" class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit</a>
                     <a class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Close</a>
                 </div>
                 <div class="col s9 bug-summary-info">

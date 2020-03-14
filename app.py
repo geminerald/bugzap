@@ -29,7 +29,11 @@ def insert_bug():
     return redirect(url_for('get_bugs'))
 
 
+@app.route('/edit_bug/<bug_id>')
+def edit_bug(bug_id):
+    the_bug = mongo.db.bug.find_one({'_id: ObjectId(bug_id)'})
+    all_users = mongo.db.users.find()
+    return render_template('editbug.html', bug=the_bug, users = all_users)
+
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-    port=int(os.environ.get('PORT')),
-    debug=True)
+    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)

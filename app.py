@@ -31,7 +31,7 @@ def insert_bug():
 
 @app.route('/edit_bug/<bug_id>')
 def edit_bug(bug_id):
-    the_bug = mongo.db.bug.find_one({'_id: ObjectId(bug_id)'})
+    the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
     all_users = mongo.db.users.find()
     return render_template('editbug.html', bug=the_bug, users = all_users)
 

@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content%}
 
-<h3>Report a new Bug</h3>
+<h3>Edit a Bug</h3>
 
 <div class="row">
     <form action="{{url_for('insert_bug')}}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Placeholder" id="bug_summary" name="bug_summary" type="text" class="validate">
+                <input id="bug_summary" name="bug_summary" type="text" class="validate">
                 <label for="bug_summary">Bug Summary</label>
             </div>
             <div class="input-field col s6">

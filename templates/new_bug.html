@@ -7,12 +7,12 @@
     <form action="{{url_for('insert_bug')}}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Placeholder" id="bug_summary" name="bug_summary" type="text" class="validate">
+                <input  id="bug_summary" name="bug_summary" type="text" class="validate">
                 <label for="bug_summary">Bug Summary</label>
             </div>
             <div class="input-field col s6">
-                <input id="bug_category" name="bug_category" type="text" class="validate">
-                <label for="bug_category">Category</label>
+                <input id="bug_area" name="bug_area" type="text" class="validate">
+                <label for="bug_area">Area</label>
             </div>
         </div>
         <div class="row">
@@ -25,21 +25,28 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select class="col s 6" id="bug_user" name="bug_user">
+                <select class="col s 4" id="bug_user" name="bug_user">
                     <option value="" disabled selected>Choose your option</option>
                     {% for user in users %}
                     <option value="{{user.username}}">{{user.username}}</option>
                     {% endfor %}
                 </select>
-                <label>Pick a User</label>
-                <select class="col s 6" id="bug_priority" name="bug_priority">
+                <label class = "col s 4" for="bug_user">Pick a User</label>
+                <select class="col s 4" id="bug_priority" name="bug_priority">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Urgent</option>
                     <option value="2">High</option>
                     <option value="3">Medium</option>
                     <option value="4">Low</option>
                 </select>
-                <label>Priority</label>
+                <label class = "col s 4" for= "bug_priority">Priority</label>
+                <select class="col s 4" id="bug_category" name="bug_category">
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for category in categories %}
+                    <option value="{{category.cat_name}}">{{category.cat_name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="bug_category">Category</label>
             </div>
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>

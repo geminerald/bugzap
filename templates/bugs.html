@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content%}
 <h1> Hello Bugs Page</h1>
+<div class="toolbar">Sort and Filter options will go here</div>
 <ul class="collapsible">
     {% for bug in bugs %}
         <li>
@@ -11,7 +12,7 @@
                     <a class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Close</a>
                 </div>
                 <div class="col s9 bug-summary-info">
-                    <strong>{{bug.bug_summary}}</strong>  Submitted by {{bug.bug_user}}
+                    <strong>{{bug.bug_summary}}</strong>  Submitted by {{bug.bug_user}} Priority: {{bug.bug_priority}}
                 </div>
             </div>
             <div class="collapsible-body"><span>{{bug.bug_description}}</span>

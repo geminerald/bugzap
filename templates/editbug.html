@@ -4,21 +4,21 @@
 <h3>Edit a Bug</h3>
 
 <div class="row">
-    <form action="{{url_for('insert_bug')}}" method="POST" class="col s12">
+    <form action="{{ url_for('update_bug', bug_id=bug._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input id="bug_summary" name="bug_summary" type="text" class="validate">
+                <input id="bug_summary" name="bug_summary" type="text" class="validate" value="{{bug.bug_summary}}">
                 <label for="bug_summary">Bug Summary</label>
             </div>
             <div class="input-field col s6">
-                <input id="bug_category" name="bug_category" type="text" class="validate">
+                <input id="bug_category" name="bug_category" type="text" class="validate" value="{{bug.bug_category}}">
                 <label for="bug_category">Category</label>
             </div>
         </div>
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="bug_description" name="bug_description" class="materialize-textarea"></textarea>
+                    <textarea id="bug_description" name="bug_description" class="materialize-textarea">{{bug.bug_description}}</textarea>
                     <label for="bug_description">Bug Description</label>
                 </div>
             </div>
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <select class="col s 6" id="bug_user" name="bug_user">
-                    <option value="" disabled selected>Choose your option</option>
+                    <option value="{{bug.bug_user}}" disabled selected>Choose your option</option>
                     {% for user in users %}
                     <option value="{{user.username}}">{{user.username}}</option>
                     {% endfor %}

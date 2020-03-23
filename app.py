@@ -19,7 +19,7 @@ def get_bugs():
 
 @app.route('/new_bug')
 def new_bug():
-    return render_template('new_bug.html', users=mongo.db.users.find())
+    return render_template('new_bug.html', users=mongo.db.users.find(), categories = mongo.db.category.find())
 
 
 @app.route('/insert_bug', methods=['POST'])

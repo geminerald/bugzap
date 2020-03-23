@@ -38,7 +38,7 @@ def edit_bug(bug_id):
 
 @app.route('/update_bug/bug_id', methods=["POST"])
 def update_bug(bug_id):
-    bugs=mongo.db.bug
+    bugs = mongo.db.bug
     bugs.update( {'(_id': ObjectId(bug_id)},
     {
            

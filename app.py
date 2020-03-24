@@ -33,7 +33,8 @@ def insert_bug():
 def edit_bug(bug_id):
     the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
     all_users = mongo.db.users.find()
-    return render_template('editbug.html', bug=the_bug, users=all_users)
+    all_categories = mongo.db.category.find()
+    return render_template('editbug.html', bug=the_bug, users=all_users, categories = all_categories)
 
 
 @app.route('/update_bug/<bug_id>', methods=["POST"])

@@ -36,13 +36,14 @@ def edit_bug(bug_id):
     return render_template('editbug.html', bug=the_bug, users=all_users)
 
 
-@app.route('/update_bug/bug_id', methods=["POST"])
+@app.route('/update_bug/<bug_id>', methods=["POST"])
 def update_bug(bug_id):
     bugs = mongo.db.bug
-    bugs.update( {'(_id': ObjectId(bug_id)},
+    bugs.update( {'_id': ObjectId(bug_id)},
     {
-           
+        'bug_summary': request.form.get('bug_summary')
     })
+    return redirect(url_for('get_bugs'))
 
 
 if __name__ == '__main__':

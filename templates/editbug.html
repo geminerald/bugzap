@@ -29,7 +29,11 @@
                 <select class="col s4" id="bug_user" name="bug_user">
                     <option value="" disabled selected>Username</option>
                     {% for user in users %}
+                    {% if user_username == bug_username %}
+                    <option value="{{user.username}}" selected>{{user.user_username}}</option>
+                    {% else %}
                     <option value="{{user.username}}">{{user.username}}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
                
@@ -43,9 +47,12 @@
                 
                 
                 <select class="col s4" id="bug_category" name="bug_category">
-                    <option value="" disabled selected>Category</option>
                     {% for category in categories %}
+                        {% if category_category_name == bug.bug_category %}
+                        <option value="{{category.category_name}}" selected>{{category.category_name}}</option>
+                        {% else %}
                     <option value="{{category.category_name}}">{{category.category_name}}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 

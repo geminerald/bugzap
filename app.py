@@ -52,5 +52,10 @@ def update_bug(bug_id):
     return redirect(url_for('get_bugs'))
 
 
+@app.route('/delete_bug/<bug_id>')
+def delete_bug(bug_id):
+    mongo.db.bug.remove({'_id': ObjectId(bug_id)})
+    return redirect(url_for('get_bugs'))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)

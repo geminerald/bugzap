@@ -41,7 +41,10 @@ def update_bug(bug_id):
     bugs = mongo.db.bug
     bugs.update( {'_id': ObjectId(bug_id)},
     {
-        'bug_summary': request.form.get('bug_summary')
+        'bug_summary': request.form.get('bug_summary'),
+        'bug_area': request.form.get('bug_area'),
+        'bug_description': request.form.get('bug_description'),
+        'bug_priority': request.form.get('bug_priority')
     })
     return redirect(url_for('get_bugs'))
 

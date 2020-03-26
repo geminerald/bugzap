@@ -1,6 +1,10 @@
 body{
-    background-color: #fafafa;
-    color: slategrey;
+    background-color: #2b2c2e;
+    color: #fafafa;
+}
+
+nav{
+    background-color: #3eec3e;
 }
 
 .btn-small{
@@ -16,5 +20,6 @@ body{
     margin-top: 5px;
     display:flex;
     justify-content: space-between;
+    color: #2b2c2e;
 
 }

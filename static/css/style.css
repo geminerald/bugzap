@@ -1,6 +1,9 @@
 body{
-    background-color: #474b4f;
     color: #fafafa;
+}
+
+.container{
+    background-color: #474b4f;
 }
 
 nav{
@@ -20,6 +23,10 @@ nav{
     margin-top: 5px;
     display:flex;
     justify-content: space-between;
-    color: #2b2c2e;
+    color: #474b4f;
 
+}
+
+.category-header{
+    color: #474b4f;
 }

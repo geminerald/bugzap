@@ -62,6 +62,17 @@ def delete_bug(bug_id):
 def get_categories():
     return render_template('categories.html', categories=mongo.db.category.find())
 
+@app.route('/new_category')
+def new_category():
+    return render_template('new_category.html')
+
+@app.route('/insert_category', methods=['POST'])
+def insert_category():
+    categories = mongo.db.category
+    categories.insert_one(request.form.to_dict())
+    return redirect(url_for('get_categories'))
+
+
 
 @app.route('/edit_category/<category_id>')
 def edit_category(category_id):

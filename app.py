@@ -19,7 +19,7 @@ def get_bugs():
 
 @app.route('/new_bug')
 def new_bug():
-    return render_template('new_bug.html', users=mongo.db.users.find(), categories = mongo.db.category.find())
+    return render_template('new_bug.html', users=mongo.db.users.find(), categories=mongo.db.category.find())
 
 
 @app.route('/insert_bug', methods=['POST'])
@@ -34,14 +34,14 @@ def edit_bug(bug_id):
     the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
     all_users = mongo.db.users.find()
     all_categories = mongo.db.category.find()
-    return render_template('editbug.html', bug=the_bug, users=all_users, categories = all_categories)
+    return render_template('editbug.html', bug=the_bug, users=all_users, categories=all_categories)
 
 
 @app.route('/update_bug/<bug_id>', methods=["POST"])
 def update_bug(bug_id):
     bugs = mongo.db.bug
-    bugs.update( {'_id': ObjectId(bug_id)},
-    {
+    bugs.update({'_id': ObjectId(bug_id)},
+                {
         'bug_summary': request.form.get('bug_summary'),
         'bug_area': request.form.get('bug_area'),
         'bug_description': request.form.get('bug_description'),
@@ -60,14 +60,14 @@ def delete_bug(bug_id):
 
 @app.route('/get_categories')
 def get_categories():
-    return render_template('categories.html',categories=mongo.db.category.find())
+    return render_template('categories.html', categories=mongo.db.category.find())
 
 
 @app.route('/edit_category/<category_id>')
 def edit_category(category_id):
-    return render_template('editcategory.html', 
-                            category=mongo.db.category.find_one(
-                                {'_id': ObjectId(category_id)}))
+    return render_template('editcategory.html',
+                           category=mongo.db.category.find_one(
+                               {'_id': ObjectId(category_id)}))
 
 
 @app.route('/update_category/<category_id>', methods=['POST'])
@@ -78,5 +78,11 @@ def update_category(category_id):
     return redirect(url_for('get_categories'))
 
 
+@app.route('/get_users')
+def get_users():
+    return render_template('user_admin.html', users=mongo.db.users.find())
+
+
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
+    app.run(host=os.environ.get('IP'), port=int(
+        os.environ.get('PORT')), debug=True)

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content%}
+<h1>User Admin</h1>
+<div class="toolbar">Sort and Filter options will go here</div>
+
+<div class="row">
+
+	<ul class="collapsible">
+		{% for user in users %}
+		<li>
+			<div class="collapsible-header category-header">
+				<div class="col s9 category-summary-info">
+					<strong>{{user.username}}</strong>
+				</div>
+				<div class="col s3 category-buttons">
+					<i class="material-icons">arrow_drop_down</i>
+					<a href="" class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit
+						User Profile</a>
+					<a href=""
+						class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Delete
+						User</a>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}

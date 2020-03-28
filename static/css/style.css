@@ -4,6 +4,9 @@ body{
 
 .container{
     background-color: #474b4f;
+    padding: 50px;
+    height: 100vh;
+    border-radius: 5px;
 }
 
 nav{
@@ -29,4 +32,8 @@ nav{
 
 .category-header{
     color: #474b4f;
+}
+
+.brand-logo{
+    margin-left: 80px;
 }

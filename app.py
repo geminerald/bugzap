@@ -90,6 +90,11 @@ def update_category(category_id):
     return redirect(url_for('get_categories'))
 
 
+@app.route('/delete_category/<category_id>')
+def delete_category(category_id):
+    mongo.db.category.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('get_categories'))
+
 @app.route('/get_users')
 def get_users():
     return render_template('user_admin.html', users=mongo.db.users.find())

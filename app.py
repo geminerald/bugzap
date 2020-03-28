@@ -95,6 +95,7 @@ def delete_category(category_id):
     mongo.db.category.remove({'_id': ObjectId(category_id)})
     return redirect(url_for('get_categories'))
 
+
 @app.route('/get_users')
 def get_users():
     return render_template('user_admin.html', users=mongo.db.users.find())
@@ -109,6 +110,27 @@ def new_user():
 def insert_user():
     users = mongo.db.users
     users.insert_one(request.form.to_dict())
+    return redirect(url_for('get_users'))
+
+
+@app.route('/edit_user/<user_id>')
+def edit_user(user_id):
+    return render_template('edit_user.html',
+                           user=mongo.db.users.find_one(
+                               {'_id': ObjectId(user_id)}))
+
+
+@app.route('/update_user/<user_id>', methods=['POST'])
+def update_user(user_id):
+    mongo.db.users.update(
+        {'_id': ObjectId(user_id)},
+        {'username': request.form.get('username')})
+    return redirect(url_for('get_users'))
+
+
+@app.route('/delete_user/<user_id>')
+def delete_user(user_id):
+    mongo.db.users.remove({'_id': ObjectId(user_id)})
     return redirect(url_for('get_users'))
 
 

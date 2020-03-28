@@ -2,11 +2,12 @@ body{
     color: #fafafa;
 }
 
-.container{
-    background-color: #474b4f;
-    padding: 80px;
+.container {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 10px;
+    background-color: #474B50;
     height: 100vh;
-    width: 75%;
     border-radius: 5px;
 }
 

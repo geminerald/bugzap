@@ -9,15 +9,18 @@
 			<div class="col s9 bug-summary-info">
 				<strong>{{bug.bug_summary}}</strong> Submitted by {{bug.bug_user}} Priority: {{bug.bug_priority}}
 			</div>
-			<div class="col s3 bug-buttons">
+			<div class="col s3 drop-down-arrow">
 				<i class="material-icons">arrow_drop_down</i>
+			</div>
+		</div>
+		<div class="collapsible-body">
+			<div class="bug-description">{{bug.bug_description}}</div>
+			<div class="bug-buttons">
 				<a href="{{url_for('edit_bug', bug_id = bug._id)}}"
 					class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit</a>
 				<a href="{{url_for('delete_bug', bug_id = bug._id)}}"
 					class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Close</a>
 			</div>
-		</div>
-		<div class="collapsible-body"><span>{{bug.bug_description}}</span>
 			<div class="collapsible-footer"><span>{{bug.bug_category}}</span></div>
 		</div>
 	</li>

@@ -14,14 +14,14 @@
 			</div>
 		</div>
 		<div class="collapsible-body">
+            <div class="bug-category"><strong>{{bug.bug_category}}</strong></div>
 			<div class="bug-description">{{bug.bug_description}}</div>
 			<div class="bug-buttons">
 				<a href="{{url_for('edit_bug', bug_id = bug._id)}}"
-					class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit</a>
+					class="waves-effect waves-light btn btn-small edit"><i class="material-icons right"></i>Edit</a>
 				<a href="{{url_for('delete_bug', bug_id = bug._id)}}"
-					class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Close</a>
+					class="waves-effect waves-light btn btn-small close"><i class="material-icons right"></i>Close</a>
 			</div>
-			<div class="collapsible-footer"><span>{{bug.bug_category}}</span></div>
 		</div>
 	</li>
 	{% endfor %}

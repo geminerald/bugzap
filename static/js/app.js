@@ -1,10 +1,5 @@
 $(document).ready(function () {
     console.log("This is the linked page");
-
-});
-
-const submitBtn = document.getElementById("submit");
-submitBtn.addEventListener('click', () => {
     const currentDate = new Date();
     const date = currentDate.getDate();
     const month = currentDate.getMonth();
@@ -13,4 +8,6 @@ submitBtn.addEventListener('click', () => {
     console.log(dateString)
     const timeStamp = document.getElementById("timeStamp");
     let timeStamp.value = dateString;
-}
+
+});
+

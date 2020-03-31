@@ -15,16 +15,15 @@
 				<div class="col s3 category-buttons">
 					<i class="material-icons">arrow_drop_down</i>
 					<a href="{{url_for('edit_category', category_id = category._id)}}"
-						class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit
-						Category</a>
+						class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>Edit Category</a>
 					<a href="{{url_for('delete_category', category_id = category._id)}}"
-					class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Delete Category</a>
+						class="waves-effect waves-light btn btn-small blue"><i class="material-icons right"></i>Delete Category</a>
 				</div>
 			</div>
 		</li>
 		{% endfor %}
 		<a href="{{url_for('new_category')}}"
-			class="waves-effect waves-light btn btn-small"><i class="material-icons right"></i>New Category</a>
+			class="waves-effect waves-light btn"><i class="material-icons right"></i>New Category</a>
 	</ul>
 </div>
 {% endblock %}

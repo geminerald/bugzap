@@ -6,8 +6,6 @@ $(document).ready(function () {
     const year = currentDate.getFullYear();
     const dateString = `Date: ${date}/${month + 1}/${year}`
     console.log(dateString);
-    const timeStamp = document.getElementById("timeStamp");
-    let timestamp.value = timeStampValue
-    let timeStampValue = ` ${date} ${month} ${year}`
+    document.getElementById("timeStamp").innerHTML = dateString;
 });
 

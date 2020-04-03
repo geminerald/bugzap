@@ -54,3 +54,7 @@ nav{
     justify-content: space-evenly;
     align-items: center;
 }
+
+.bug-summary-info{
+    text-align: center;
+}

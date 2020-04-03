@@ -4,9 +4,8 @@ $(document).ready(function () {
     const date = currentDate.getDate();
     const month = currentDate.getMonth();
     const year = currentDate.getFullYear();
-    const dateString = `Date: ${date}/${month + 1}/${year}`
+    const dateString = `${date}/${month + 1}/${year}`
     console.log(dateString);
     document.getElementById("timeStamp").value = dateString;
-    document.getElementById("timeStamp").innerHTML = dateString;
 });
 

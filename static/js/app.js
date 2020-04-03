@@ -8,4 +8,3 @@ $(document).ready(function () {
     console.log(dateString);
     document.getElementById("timeStamp").value = dateString;
 });
-

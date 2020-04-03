@@ -86,7 +86,10 @@ def edit_category(category_id):
 def update_category(category_id):
     mongo.db.category.update(
         {'_id': ObjectId(category_id)},
-        {'category_name': request.form.get('category_name')})
+        {
+            'category_name': request.form.get('category_name'),
+            'category_description': request.form.get('category_description')
+        })
     return redirect(url_for('get_categories'))
 
 

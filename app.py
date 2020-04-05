@@ -52,6 +52,13 @@ def update_bug(bug_id):
     return redirect(url_for('get_bugs'))
 
 
+@app.route('/view_bug/<bug_id>')
+def view_bug(bug_id):
+    the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
+    bug_notes = mongo.db.notes.find()
+    return render_template('bug_notes.html', bug = the_bug, notes = bug_notes)
+
+
 @app.route('/delete_bug/<bug_id>')
 def delete_bug(bug_id):
     mongo.db.bug.remove({'_id': ObjectId(bug_id)})

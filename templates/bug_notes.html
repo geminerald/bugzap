@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="notes-main">
+    {% for note in notes %}
+        {{note.text}}
+        Added by {{note.user}} on {{note.timestamp}}
+    {% endfor %}
+</div>
+<a href="{{url_for('get_bugs')}}"
+					class="waves-effect waves-light btn red"><i class="material-icons right"></i>Back</a>
+			</div>
+{% endblock %}

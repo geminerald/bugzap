@@ -51,10 +51,18 @@ nav{
 .collapsible-body{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
 .bug-summary-info{
     text-align: center;
+}
+
+.bug-category{
+    text-align: left;
+}
+
+.bug-buttons{
+    text-align: right;
 }

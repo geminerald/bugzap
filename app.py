@@ -144,6 +144,18 @@ def delete_user(user_id):
     return redirect(url_for('get_users'))
 
 
+@app.route('/new_note')
+def new_note():
+    return render_template('new_note.html')
+
+
+@app.route('/insert_note', methods=['POST'])
+def insert_note():
+    notes = mongo.db.notes
+    notes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_bugs'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(
         os.environ.get('PORT')), debug=True)

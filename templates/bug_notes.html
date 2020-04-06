@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% block content%}
 <div class="notes-main">
-    {% for note in notes %}
-        {{note.text}}
-        Added by {{note.user}} on {{note.timestamp}}
-    {% endfor %}
+	<ul>
+		{% for note in notes %}
+		<li>
+			{{note.text}}
+			Added by {{note.user}} on {{note.timestamp}}
+		</li>
+		{% endfor %}
+	</ul>
+    <a href="{{url_for('new_note')}}" class="waves-effect waves-light btn"><i class="material-icons right"></i>Add Note</a>
 </div>
-<a href="{{url_for('get_bugs')}}"
-					class="waves-effect waves-light btn red"><i class="material-icons right"></i>Back</a>
-			</div>
+<a href="{{url_for('get_bugs')}}" class="waves-effect waves-light btn red"><i class="material-icons right"></i>Back</a>
+</div>
 {% endblock %}

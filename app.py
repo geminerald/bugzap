@@ -55,7 +55,7 @@ def update_bug(bug_id):
 @app.route('/view_bug/<bug_id>')
 def view_bug(bug_id):
     the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
-    bug_notes = mongo.db.notes.find()
+    bug_notes = mongo.db.notes.find({"bug_id": ObjectId(bug_id)})
     return render_template('bug_notes.html', bug=the_bug, notes=bug_notes)
 
 

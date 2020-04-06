@@ -56,7 +56,21 @@ def update_bug(bug_id):
 def view_bug(bug_id):
     the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
     bug_notes = mongo.db.notes.find()
-    return render_template('bug_notes.html', bug = the_bug, notes = bug_notes)
+    return render_template('bug_notes.html', bug=the_bug, notes=bug_notes)
+
+
+@app.route('/new_note/<bug_id>')
+def new_note(bug_id):
+    the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
+    bug_notes = mongo.db.notes.find()
+    return render_template('new_note.html', bug = the_bug, notes = bug_notes)
+
+
+@app.route('/insert_note', methods=['POST'])
+def insert_note():
+    notes = mongo.db.notes
+    notes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_bugs'))
 
 
 @app.route('/delete_bug/<bug_id>')
@@ -142,18 +156,6 @@ def update_user(user_id):
 def delete_user(user_id):
     mongo.db.users.remove({'_id': ObjectId(user_id)})
     return redirect(url_for('get_users'))
-
-
-@app.route('/new_note')
-def new_note():
-    return render_template('new_note.html')
-
-
-@app.route('/insert_note', methods=['POST'])
-def insert_note():
-    notes = mongo.db.notes
-    notes.insert_one(request.form.to_dict())
-    return redirect(url_for('get_bugs'))
 
 
 if __name__ == '__main__':

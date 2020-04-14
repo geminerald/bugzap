@@ -63,7 +63,7 @@ def view_bug(bug_id):
 def new_note(bug_id):
     the_bug = mongo.db.bug.find_one({"_id": ObjectId(bug_id)})
     bug_notes = mongo.db.notes.find()
-    return render_template('new_note.html', bug = the_bug, notes = bug_notes)
+    return render_template('new_note.html', bug=the_bug, notes=bug_notes)
 
 
 @app.route('/insert_note', methods=['POST'])
